@@ -1,0 +1,67 @@
+.form {
+
+  &__group {
+
+    margin-bottom: $vr;
+
+    label {
+
+      display: block;
+      margin-bottom: ($vr / 6);
+    }
+
+    input {
+      font-size: $type-1;
+      font-style: italic;
+      padding: $type-2;
+      width: 100%;
+
+      @include sm {}
+
+      @include md {}
+
+      @include lg {}
+    }
+
+    textarea {
+      font-size: $type-1;
+      font-style: italic;
+      padding: $type-2;
+      width: 100%;
+    }
+  }
+
+  &__submit {
+    display: flex;
+
+    button {
+      display: inline-block;
+      width: 100%;
+
+      @include sm {
+        margin-left: auto;
+        width: auto;
+      }
+    }
+  }
+}
+
+// Validazione
+
+.input--error {
+  border: 2px solid $red;
+}
+
+.validation-message {
+  color: $red;
+  font-size: $type-1;
+}
+
+.confirmation-message {
+  padding: $vr $gutter;
+  background-color: color($green tint(70%));
+  border: 5px dashed $green;
+  border-radius: 5px;
+  margin-top: $vr * 3;
+  text-align: center;
+}

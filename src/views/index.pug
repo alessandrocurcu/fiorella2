@@ -1,0 +1,49 @@
+extends _base.pug
+block personal
+  meta(name="description", content="Located in North/Center of Italy, Summer Camps Italy provides World class Summer experiences for young people")
+  title Summer Camps Italy | Adventure, Culture and Sport in Italy
+block link
+  link(href="https://fonts.googleapis.com/css?family=Bree+Serif|Candal", rel="stylesheet")
+block main
+  svg.svg-inline--fa.fa-phone.fa-w-16(aria-hidden='true', focusable='false', data-prefix='fas', data-icon='phone', role='img', xmlns='http://www.w3.org/2000/svg', style="display: none")
+    defs
+      symbol(id="phone", viewBox='0 0 512 512')
+        title Phone Icon
+        path(fill='#ED1C23', d='M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z')
+  svg.svg-inline--fa.fa-envelope.fa-w-16(aria-hidden='true', focusable='false', data-prefix='fas', data-icon='envelope', role='img', xmlns='http://www.w3.org/2000/svg', style="display: none")
+    defs
+      symbol(id="mail", viewBox='0 0 512 512')
+        title Mail Icon
+        path(fill='#ED1C23', d='M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z')
+  .container
+    .col1
+      .header
+        //- img.logo__img(src="img/summer-camps-italy-logo.png", alt="summer-camps-italy-logo")
+        .logo
+          img.logo__img(src="img/summer-camps-italy-logo.png", alt="summer-camps-italy-logo")
+          p.logotype Fiorella Bonfanti Camp Italy
+        h1.title Come, train and learn in U.S.A
+        p.payoff Campi sportivi estivi e corsi in inglese di un semestre o anno scolastico in scuole superiori e college americani
+        p.summary Vivi un'esperienza all'estero per potenziare lo sport, la lingua inglese, stringere nuove amicizie, potenziare il tuo curriculm vitae in un ambiente internazionale entusiasmante!
+        h2 Contattaci per informazioni!
+        .info
+          svg(style="width:16.8px; height: 16.8px; margin-right: 8px")
+            use(xlink:href="#phone")
+          p: a(href="tel:+39 3881867325") 329 461436
+        .info  
+          svg(style="width:16.8px; height: 16.8px; margin-right: 8px")
+            use(xlink:href="#mail")
+          p: a(href="mailto:fbcampitaly@gmail.com") fbcampitaly@gmail.com
+    .col2
+      .figurez     
+        picture.img.absolute
+          source(srcset="img/webp/sport.webp", type="image/webp")  
+          img.img2.img--border-green(src="img/sport.jpg", alt="kids having fun") 
+        picture.img.absolute
+          source(srcset="img/webp/playground.webp", type="image/webp")  
+          img.img3.img--border-red.rotate2(src="img/playground.jpg", alt="kids having fun") 
+        picture.img.absolute
+          source(srcset="img/webp/soccer.webp", type="image/webp")  
+          img.img4.img--border-red.rotate3(src="img/soccer.jpg", alt="kids having fun") 
+block mainScript
+  //- script(src="js/index.js")

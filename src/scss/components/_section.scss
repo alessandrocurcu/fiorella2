@@ -1,0 +1,163 @@
+.section {
+  line-height: 1.5;
+  padding: ($vr / 1.5) ($gutter / 2);
+  padding-bottom: $vr * 1.5;
+
+  @include sm {
+    padding: ($vr * 2) ($gutter * 1.5);
+  }
+
+  @include md {
+    padding: ($vr * 2) ($gutter * 1.5);
+
+  }
+
+  @include xl {
+    padding: ($vr * 4) ($gutter * 2);
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: $vr * 1.5;
+    text-align: center;
+    font-size: $type1;
+    line-height: 1.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: $primary-text;
+
+    &:after {
+      content: ' ';
+      margin-top: $vr / 2;
+      display: block;
+      background-color: $orange;
+      width: 80px;
+      height: 5px;
+
+      @include sm {
+        width: 200px;
+      }
+    }
+
+    @include sm {
+      font-size: $type2;
+    }
+
+    @include xl {
+      font-size: $type4;
+    }
+  }
+
+  &__text {
+    color: gray;
+    text-align: center;
+
+    p:not(last-child) {
+      margin-bottom: $vr;
+    }
+
+    p:only-child {
+      width: 95%;
+      margin: 0 auto;
+      margin-bottom: $vr * 1.5;
+
+      @include sm {
+        margin-bottom: $vr * 2;
+        width: 70%;
+      }
+    }
+  }
+
+  &__img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    @include box-shadow(2);
+    position: relative;
+    border-right: $type-3 dashed $yellow;
+    border: $type-3 dashed rgba(239, 196, 40, 0.8);
+    background-clip: border-box;
+    text-align: center;
+    font-size: $type-1;
+    line-height: 3;
+  }
+
+  &__list {
+    color: gray;
+    line-height: 1.6;
+    list-style: none;
+
+    li:nth-child(odd):before {
+      content: "\2022";
+      /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: $yellow;
+      /* Change the color */
+      font-weight: bold;
+      /* If you want it to be bold */
+      display: inline-block;
+      /* Needed to add space between the bullet and the text */
+      width: 1em;
+      /* Also needed for space (tweak if needed) */
+      margin-left: -1em;
+      /* Also needed for space (tweak if needed) */
+    }
+
+    li:nth-child(even):before {
+      content: "\2022";
+      /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: $orange;
+      /* Change the color */
+      font-weight: bold;
+      /* If you want it to be bold */
+      display: inline-block;
+      /* Needed to add space between the bullet and the text */
+      width: 1em;
+      /* Also needed for space (tweak if needed) */
+      margin-left: -1em;
+      /* Also needed for space (tweak if needed) */
+    }
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+
+    @include sm {
+      flex-direction: row;
+      justify-content: center;
+
+    }
+  }
+
+
+  &--bend {
+    background-color: $gray;
+    // padding-top: ($vr * 1.5);
+    // padding-bottom: ($vr * 1.5);
+
+    @include xl {
+      // padding: ($vr * 4) ($gutter * 2);
+    }
+  }
+
+  &-first {
+    &__text {}
+
+    &__img {}
+  }
+
+  &-second {
+    &__text {
+      grid-column: 6 / 13;
+
+    }
+
+    &__img {
+      grid-column: 1 / 5;
+    }
+  }
+
+
+}

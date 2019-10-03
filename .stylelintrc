@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "block-no-empty": true,
+    "color-no-invalid-hex": true,
+    "declaration-colon-space-after": "always",
+    "unit-whitelist": ["ch", "fr", "vh", "px", "em", "rem", "%", "s"]
+  }
+}

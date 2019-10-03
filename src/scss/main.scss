@@ -1,0 +1,191 @@
+@import "custom-normalize";
+@import 'mixins';
+@import 'variables';
+@import 'utilities';
+
+:root {
+  font-size: 21px;
+  font-family: $secondary-text;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  // background-image: url("../img/sport_tile.png");
+  // background-blend-mode: overlay;
+  color: $tc;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  position: relative;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+main {
+  position: relative;
+
+  &:after {
+    content: "";
+    background: url("../img/sport_tile_sm.png");
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  // margin-top: 32px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  // place-items: center;
+  max-width: 1280px;
+  // min-width: 360px;
+}
+
+.logotype {
+  font-size: $type-1;
+  margin-left: 8px;
+}
+
+.col1,
+.col2,
+.center {
+  display: grid;
+  place-items: center;
+}
+
+// .center {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+.figurez {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  // width: 300px;
+}
+
+.title {
+  font-size: $type5;
+  line-height: 100%;
+  margin-bottom: $vr / 2;
+}
+
+.header {
+  postion: relative;
+}
+
+.logo {
+  position: relative;
+  margin-bottom: $vr;
+  left: -40px;
+  display: flex;
+  // flex-direction: column;
+  align-items: center;
+  // margin-right: auto;
+
+
+  &__img {
+    width: 100px;
+
+    // position: absolute;
+    // opacity: 0.5;
+    // top: -32px;
+    // left: -32px;
+    // transform: scale(2);
+  }
+}
+
+.img {
+  &:first-child {
+    top: 0;
+    left: 0;
+  }
+
+  &:nth-child(2) {
+    top: -64px;
+    left: -40px
+  }
+
+  &:last-child {
+    bottom: -104px;
+    right: -32px
+  }
+}
+
+.img2 {
+  height: auto;
+  // width: 100%;
+  width: 400px;
+}
+
+.img3 {
+  width: 200px;
+}
+
+.img4 {
+  width: 300px;
+}
+
+.absolute {
+  position: absolute;
+  // top: 0;
+  // left: 0;
+  width: 300px;
+}
+
+.img--border-red {
+  // object-fit: cover;
+  @include box-shadow(2);
+  // position: relative;
+  background-clip: border-box;
+  border-right: $type-4 dashed $redRGBA;
+  border: $type-4 dashed $redRGBA;
+}
+
+.img--border-green {
+  // object-fit: cover;
+  @include box-shadow(2);
+  // position: relative;
+  background-clip: border-box;
+  border-right: $type-4 dashed $greenRGBA;
+  border: $type-4 dashed $greenRGBA;
+}
+
+.rotate1 {
+  transform: rotate(2deg);
+}
+
+.rotate2 {
+  transform: rotate(-3deg);
+}
+
+.rotate3 {
+  transform: rotate(5deg);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.credits {
+  font-size: $type-2;
+}
+
+
+// @import 'components/button.scss';
+// @import 'components/hero.scss';
+// @import 'components/card';
+// @import 'components/form';
+// @import 'components/section';

@@ -1,0 +1,222 @@
+extends _base.pug
+block personal
+  meta(name="description", content="Located in North/Center of Italy, Summer Camps Italy provides World class Summer experiences for young people")
+  title Summer Camps Italy | Adventure, Culture and Sport in Italy
+block link
+  link(rel="stylesheet", type="text/css", href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")
+  link(href="https://fonts.googleapis.com/css?family=Bree+Serif|Candal", rel="stylesheet")
+block main
+  svg.svg-inline--fa.fa-phone.fa-w-16(aria-hidden='true', focusable='false', data-prefix='fas', data-icon='phone', role='img', xmlns='http://www.w3.org/2000/svg', style="display: none")
+    defs
+      symbol(id="phone", viewBox='0 0 512 512')
+        title Phone Icon
+        path(fill='#F2682A', d='M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z')
+  svg.svg-inline--fa.fa-envelope.fa-w-16(aria-hidden='true', focusable='false', data-prefix='fas', data-icon='envelope', role='img', xmlns='http://www.w3.org/2000/svg', style="display: none")
+    defs
+      symbol(id="mail", viewBox='0 0 512 512')
+        title Mail Icon
+        path(fill='#F2682A', d='M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z')
+  .header.container
+    .header__info
+      .info
+        svg(style="width:16.8px; height: 16.8px; margin-right: 8px")
+          use(xlink:href="#phone")
+        p: a(href="tel:+39 3881867325") +39 3881867325
+      .info  
+        svg(style="width:16.8px; height: 16.8px; margin-right: 8px")
+          use(xlink:href="#mail")
+        p: a(href="mailto:fbcampitaly@gmail.com") fbcampitaly@gmail.com
+      .info
+        a(href="/")
+          figure
+            img(src="img/gb.svg", alt="Switch to english site")
+            figcaption english version   
+    include components/_isie.pug    
+  .hero.overlay-image
+    .logo
+      .logo__img
+        img(src="img/summer-camps-italy-logo.png", alt="summer-camps-italy-logo")
+      p.logo__payoff Avventura, Cultura e Sport in Italia
+    h1.hero__title.container Pratica sport, crea nuove amicizie e impara l'inglese in alcune delle più belle regioni&nbsp;italiane! 
+    a(data-scroll, href="#north").btn Vedi le nostre offerte 
+  .section.container
+    .grid
+      .section__text.grid__txt-sx
+        p Localizzati nel nord e centro italia, le proposte di Summer Camps Italy forniscono esperienze di prima classe per giovani dai 12 ai 17 anni d'età
+        p I campi sono specificatamente pensati per ragazzi desiderosi di divertirsi, sviluppare la loro creatività, cimentarsi in sfide e crescere come individui
+      picture.grid__img-dx
+        source(srcset="img/webp/kids385.webp", type="image/webp") 
+        img.section__img(src="img/kids385.jpg", alt="kids having fun")
+  .section.section--bend
+    .container
+      h2.section__title Attività
+      .cards
+        article.card
+          picture.card__img
+            source.lazy(srcset="", data-srcset="img/webp/climbing300.webp", type="image/webp") 
+            img.lazy.card__img(src="", data-src="img/climbing300.jpg", alt="Climbing activities")
+          .card__info
+            h1.card__title Milano/Venezia e camps mare
+            p.card__description Basket, tennis e beach tennis, scherma e fioretto, musica e danza e molto altro
+        article.card
+          picture.card__img
+            source.lazy(srcset="", data-srcset="img/webp/tennis.webp", type="image/webp") 
+            img.lazy(src="", data-src="img/tennis.jpg", alt="Tennis activities")
+          .card__info
+            h1.card__title Venezia/Verona e camps mare
+            p.card__description Tennis e volley e beach volley,  musica, canto e danza per un’estate di sport e divertimento
+        article.card
+          picture.card__img
+            source.lazy(srcset="", data-srcset="img/webp/scherma.webp", type="image/webp")
+            img.lazy(src="", data-src="img/scherma.jpg", alt="Scherma activities")
+          .card__info
+            h1.card__title Milano/Venezia e camps montagna
+            p.card__description Musica e sport, fotografia, danza e kik-boxing: mille attività e tanto intrattenimento
+        article.card
+          picture.card__img
+            source.lazy(srcset="", data-srcset="img/webp/rope600.webp", type="image/webp")
+            img.lazy(src="", data-src="img/rope600.jpg", alt="Games activities")
+          .card__info
+            h1.card__title Venezia/Verona e campi montagna
+            p.card__description Basket, nuoto, arti marziali, ginnastica artistica, danza e canto per un’estate ricca di attività!
+      .section__cta  
+        a.btn.btn--section(data-scroll, href="#form") Contattaci e scopri le nostre attività
+  .section.container
+    .grid
+      picture.grid__img-sx--big
+        source.lazy(srcset="", data-srcset="img/webp/gruppo700.webp", type="image/webp")
+        img.lazy.section__img(src="",   data-src="img/gruppo700.jpg", alt="Summer camp photo group")
+      .section__text.grid__txt-dx--big
+        p Summer Camps Italy offre innovativi campi estivi americani nel cuore dell'Italia e unisce educazione, cultura e avventura per un'esperienza indimenticabile
+  .section.section--bend
+    .container
+      h2.section__title Campi estivi in alcune delle più belle regioni&nbsp;italiane
+      .section__text
+        p Summer Camps Italy offre un fiume di divertimento, amicizia, apprendimento e avventura. Visita alcune città storiche d'Italia, come Milano, Venezia, Firenze, Roma, oltre alle bellissime campagne umbre e laziali.
+      .cards
+        article.card
+          picture.card__img
+            source.lazy(srcset="", data-srcset="img/webp/dolomiti600.webp", type="image/webp")
+            img.lazy(src="", data-src="img/dolomiti600.jpg", alt="Photo group by the Dolomites")
+          .card__info
+            h1.card__title Dolomiti
+            p.card__description Annidiati tra le montagne delle Dolomiti, i campi offrono 30 opzioni diverse tra sport e attività e visite a Milano e Venezia
+        article.card
+          picture.card__img
+            source.lazy(srcset="", data-srcset="img/webp/umbria600.webp", type="image/webp")
+            img.lazy(src="", data-src="img/umbria600.JPG", alt="A house in Umbria")
+          .card__info
+            h1.card__title Umbria
+            p.card__description Due campi avventura hanno base qui, tra le colline che corrono tra le famose città di Todi e Perugia
+        article.card
+          picture.card__img
+            source.lazy(srcset="", data-srcset="img/webp/roma1400.webp", type="image/webp")
+            img.lazy(src="", data-src="img/roma1400.JPG", alt="Kids walking in Rome")
+          .card__info
+            h1.card__title Roma
+            p.card__description Il campo diurno si trova in una villa nel centro di Roma, equipaggiata con una bellissima palestra, campi sportivi, un teatro, laboratori e classi, tutto circondato da ampi giardini alberati.
+        article.card
+          picture.card__img
+            source.lazy(srcset="", data-srcset="img/webp/venice300.webp", type="image/webp")
+            img.lazy(src="", data-src="img/venice300.JPG", alt="Venice")
+          .card__info
+            h1.card__title Venezia
+            p.card__description Vicino le spiagge del mar Adriatico, a pochi chilometri da Venezia, il partecipante acquisisce esperienze che dureranno una vita, lavorando in team, apprendendo dall'ambiente e praticando emozionanti sfide sportive all'aria aperta. 
+      .section__cta      
+        a(data-scroll, href="#north").btn Le nostre proposte nel nord Italia
+        a(data-scroll, href="#center").btn Le nostre proposte nel centro Italia
+  .section.container
+    h2.section__title Caratteristiche
+    .section__text
+      p Rimani connesso con Summer Camps Italy e riceverai le nostre novità! 
+    .grid
+      ul.section__list.grid__txt-sx--big
+        li Staff eccellente
+        li Alloggi di alta qualità
+        li Opzioni camp giornaliero o settimanale
+        li Pasti salutari e bilanciati
+        li Vasta scelta di sport
+        li Attività serali e divertimento
+        li Accordi con organizzazioni locali
+      picture.grid__img-dx--big
+        source.lazy(srcset="", data-srcset="img/webp/rafting700.webp", type="image/webp")
+        img.lazy.section__img(data-src="img/rafting700.jpg", alt="Practicing Rafting")  
+  .section.section--bend#north
+    .container
+      .cards
+        article.card
+          picture.card__img
+            source.lazy(srcset="", data-srcset="img/webp/water-fight400.webp", type="image/webp")
+            img.lazy(src="", data-src="img/water-fight400.jpg", alt="People playing water fight")
+          .card__info
+            h1.card__title Milano/Venezia e camps mare
+            p.card__description Basket, tennis, calcio, scherma e fioretto, musica e danza e molto altro!
+        article.card
+          picture.card__img
+            source.lazy(srcset="", data-srcset="img/webp/people400.webp", type="image/webp")
+            img.lazy(src="", data-src="img/people400.jpg", alt="People playing")
+          .card__info
+            h1.card__title Venezia/Verona e camps mare
+            p.card__description Tennis e volley e beach volley,  musica, canto e danza per un’estate di sport e divertimento!
+        article.card
+          picture.card__img
+            source.lazy(srcset="", data-srcset="img/webp/mountain-bike300.webp", type="image/webp")
+            img.lazy(src="", data-src="img/mountain-bike300.jpg", alt="People riding mountain bikes")
+          .card__info
+            h1.card__title Milano/Venezia e camps montagna
+            p.card__description Musica e sport, fotografia, danza e kik-boxing: mille attività e tanto intrattenimento!
+        article.card
+          picture.card__img
+            source.lazy(srcset="", data-srcset="img/webp/fire300.webp", type="image/webp")
+            img.lazy(src="", data-src="img/fire300.jpg", alt="Chilling around a fire")
+          .card__info
+            h1.card__title Venezia/Verona e camps montagna 
+            p.card__description Basket, nuoto, arti marziali, ginnastica artistica, danza e canto per un’estate ricca di attività!
+  .section.container#center
+    h2.section__title Campi sportivi e tour cittadini nel&nbsp;centro&nbsp;Italia
+    ul.section__list
+      li Programma di due settimane per giovani tra i 12 e i 17 anni
+      li 1 settimana di esplorazione outdoor in Umbria
+      li 1 settimana a Alphabet City a Roma
+      li Luglio 7 – Luglio 20, 2019
+      li 1 accompagnatore ogni 10 studenti a nessun costo addizionale
+  .section__cta    
+    a(data-scroll, href="#form").btn Contattaci per maggiori informazioni e prenota il tuo campo sportivo
+  .section.section--form.container
+    .section__text
+      p Summer Camps Italy offre un fantastico ventaglio di attività per tutti i partecipanti. Sia durante il tempo libero che durante le attività programmate il nostro staff è sempre presente per assicurare divertimento e un'esperienza sicura per tutti. Non importa se i ragazzi e le ragazze vogliono partecipare ai nostri programmi più tradizionali o a quelli speciali, siamo aperti a suggerimenti e richieste speciali. Chiedici delle nostre offerte!
+    form.form#form
+      .form__group
+        label(for="name") Nome
+        input#name.form__input(type="name", name="name", tabindex="0", placeholder="Il tuo nome", required)
+        p.validation-message.u-show-hide Inserisci il tuo nome
+      .form__group
+        label(for="email") Indirizzo email
+        input#email.form__input(type="email", name="email", maxlength="30", tabindex="0",placeholder="Il tuo indirizzo email", required)
+        p.validation-message.u-show-hide Inserisci un indirizzo email valido
+        p.validation-message.u-show-hide Inserisci un indirizzo email valido
+      .form__group
+        label(for="city") Città
+        input#city.form__input(type="city", name="city", maxlength="30", tabindex="0",placeholder="La tua città", required)
+        p.validation-message.u-show-hide Inserisci una città
+      .form__group
+        label(for="message") Messaggio
+        textarea#message(name="message", rows="10", placeholder="Il tuo messaggio...", required)
+        p.validation-message.u-show-hide Inserisci un messaggio
+      .form__submit          
+        button#js-submitBtn.btn.btn--void(type="submit") Invia
+    .confirmation-message.u-show-hide#confirmation-message
+      p Abbiamo ricevuto il tuo messaggio! Ti contatteremo presto!    
+  footer.footer.section.section--bend
+    .container
+      .footer__info
+        .info
+          svg(style="width:32.8px; height: 32.8px; margin-right: 8px")
+            use(xlink:href="#phone")
+          p: a(href="tel:+39 3881867325") +39 3881867325
+        .info  
+          svg(style="width:32.8px; height: 32.8px; margin-right: 8px")
+            use(xlink:href="#mail")
+          p: a(href="mailto:fbcampitaly@gmail.com") fbcampitaly@gmail.com  
+block mainScript
+  script(src="js/index.js")

@@ -1,0 +1,87 @@
+.hero {
+  background-image: url('./../../img/sports1200.jpg');
+  background-size: cover;
+  display: flex;
+  padding: $vr ($gutter/2);
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @include sm {
+    padding: $vr $gutter;
+    padding-bottom: $vr * 4;
+  }
+
+  @include md {
+    padding: ($vr * 2) ($gutter * 3);
+  }
+
+  @include xl {
+    padding: ($vr * 4) ($gutter * 3);
+  }
+
+  &__title {
+    text-align: center;
+    font-size: $type2;
+    line-height: 1.1;
+    margin-bottom: $vr;
+    text-shadow: $text-shadow;
+
+    @include md {
+      line-height: 1.2;
+      font-size: $type2;
+    }
+
+    @include lg {
+      line-height: 1.2;
+      margin-bottom: $vr * 1.5;
+      font-size: $type4;
+    }
+
+    @include xl {
+      line-height: 1.1;
+      margin-bottom: $vr * 3;
+      font-size: $type6;
+    }
+  }
+}
+
+.overlay-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(32, 44, 57, 0.8);
+  background-blend-mode: multiply;
+  color: white;
+
+  @include sm {
+    background-color: rgba(32, 44, 57, 0.6);
+  }
+}
+
+.logo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: $vr;
+
+
+
+  &__img {
+    width: 100px;
+    margin-bottom: $vr / 4;
+
+    @include sm {
+      width: 150px;
+    }
+  }
+
+  &__payoff {
+    text-align: center;
+    font-size: $type-1;
+    font-weight: 700;
+    text-shadow: $text-shadow;
+  }
+}

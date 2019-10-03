@@ -1,0 +1,90 @@
+.cards {
+  display: grid;
+  grid-gap: $gutter * 1.5;
+  margin-bottom: $vr;
+
+  @include md {
+    grid-gap: $gutter * 1.5;
+    grid-template-columns: repeat(12, 1fr);
+    margin-bottom: $vr*2;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  @include box-shadow(2);
+
+  @include md {
+    grid-column: span 6;
+  }
+
+  @include lg {
+    grid-column: span 3;
+  }
+
+  &__img {
+    height: 200px;
+    // object-fit: cover;
+    // width: 100%;
+    overflow: hidden;
+    // overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    // margin-bottom: auto;
+
+    // border-bottom: 5px dashed $yellow;
+    // @include sm {
+    //   height: 200px;
+    // }
+
+    @include xl {
+      // height: 300px;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: 0 0;
+      width: 100%;
+      height: 200px;
+    }
+  }
+
+  &__title {
+    font-size: $type-1;
+    margin-bottom: $vr/2;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: $primary-text;
+
+    &:after {
+      content: ' ';
+      margin-top: $vr / 8;
+      display: block;
+      background-color: $yellow;
+      width: 80px;
+      height: 5px;
+    }
+  }
+
+  &__info {
+    padding: ($vr/2) ($gutter);
+  }
+
+  &__description {
+    font-size: $type-1;
+    line-height: 1.2;
+    margin-bottom: $vr / 2;
+    color: gray;
+  }
+
+
+
+}

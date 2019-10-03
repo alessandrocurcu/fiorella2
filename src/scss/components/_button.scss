@@ -1,0 +1,117 @@
+.btn {
+  position: relative;
+  // display: inline-flex;
+  // flex: 0 0 auto;
+  // justify-content: center;
+  // align-self: center;
+  // padding: 0 1.25rem;
+  padding: ($vr / 2) ($gutter);
+  margin-left: $gutter / 2;
+  margin-right: $gutter / 2;
+  // line-height: 2.125rem;
+  // font-size: .875rem;
+  // font-weight: 400;
+  text-align: center;
+  border-radius: 2rem;
+  // border: 2px solid $green;
+  background-color: $green2;
+  transition: color .125s ease;
+  overflow: hidden;
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 400;
+  // letter-spacing: 1px;
+  font-family: $primary-text;
+  font-variant-caps: small-caps;
+  font-size: $type-1;
+  // white-space: nowrap;
+  @include box-shadow(2);
+  transition: all 0.2s ease-in-out;
+
+  @include sm {
+    font-size: $type-1;
+    padding: ($vr / 2) ($gutter * 1.5);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: color($green2 shade(30%));
+    @include box-shadow(4);
+  }
+
+  &:active {
+    @include box-shadow(6);
+  }
+
+  &--void {
+    background-color: transparent;
+    color: $green2;
+    box-shadow: none;
+    border: 4px solid $green2;
+
+    &:hover,
+    &:focus {
+      background-color: $green2;
+      color: white;
+      border-color: white;
+    }
+  }
+
+  &:before {
+    background-color: color($green shade(20%));
+    // color: white;
+    content: "";
+    display: flex;
+    transform: scale(1, 0);
+    transition: transform .25s ease;
+    transform-origin: 50% 100%;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 1px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    //will-change: transform; //strange bug with right border
+    z-index: 0;
+  }
+
+  span {
+    display: flex;
+    position: relative;
+    z-index: 1;
+  }
+
+  .icon {
+    line-height: 2.125rem;
+    font-size: 1.25rem;
+    margin: 0 .25rem 0 -.25rem;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    // color: black;
+
+    // &:before {
+    //   transform: scale(1, 1);
+    // }
+  }
+
+  &--section {
+    // margin: 0 auto;
+    display: inline-block;
+  }
+}
+
+.btn+.btn {
+  margin: $vr 0;
+
+  @include sm {
+    margin: 0;
+    margin-left: $gutter * 2;
+  }
+}

@@ -1,0 +1,21 @@
+.u-show-hide {
+  display: none;
+}
+
+.ie {
+  margin-top: $vr;
+  background-color: color($yellow shade(5%));
+  padding: ($vr * 2) ($gutter * 2);
+  border-radius: 10px;
+  color: white;
+
+  ul {
+    margin-bottom: $vr;
+  }
+
+  p,
+  ul {
+    color: white;
+  }
+}
+
