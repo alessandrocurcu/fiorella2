@@ -4,6 +4,7 @@
 @import 'utilities';
 
 :root {
+  border: 12px solid #009DDC;
   font-size: 21px;
   font-family: $secondary-text;
   -webkit-text-size-adjust: 100%;
@@ -12,9 +13,7 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: white;
-  // background-image: url("../img/sport_tile.png");
-  // background-blend-mode: overlay;
+
   color: $tc;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
@@ -26,33 +25,111 @@
 main {
   position: relative;
 
-  &:after {
-    content: "";
-    background: url("../img/sport_tile_sm.png");
-    opacity: 0.3;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-  }
+  // &:after {
+  //   content: "";
+  //   background: url("../img/sport_tile_sm.png");
+  //   opacity: 0.3;
+  //   top: 0;
+  //   left: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   position: absolute;
+  //   z-index: -1;
+  // }
 }
 
 .container {
-  margin: 0 auto;
-  // margin-top: 32px;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  // position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $vr*4;
+
+  // background-color: red;
+  // height: 100vh;
+
   // place-items: center;
-  max-width: 1280px;
+
   // min-width: 360px;
 }
 
+.wave {
+  margin-top: auto;
+
+  // position: fixed;
+  // bottom: 0;
+  // z-index: -1;
+}
+
+.intro {
+
+
+
+  // background-image: url("../img/usa.jpg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-blend-mode: overlay;
+  // background-color: #222;
+  // color: #fff;
+
+  &__inside {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: $vr*2 0 $vr*2 0;
+    // padding-top: 64px;
+  }
+
+  .summary {
+    font-size: $type1;
+  }
+}
+
+.bend--small {
+  height: 12px;
+  background-color: #009DDC;
+}
+
+.band {
+  position: relative;
+  height: $vr*6;
+  margin: 0 auto;
+  max-width: 1280px;
+  background-image: url("../img/usa.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid black;
+  background-blend-mode: overlay;
+  border: $type-4 dashed #009DDC;
+  transform: scale(1.2) translateX(20px) rotate(1deg);
+
+  .pictures {
+    position: relative;
+
+    .picture {
+      &:first-child {
+        top: -104px;
+        left: -48px
+      }
+    }
+  }
+}
+
+.grid {
+  position: relative;
+  // top: -$vr*4;
+  background-color: rgb(255, 255, 255);
+  padding: 24px 0;
+  border-radius: 0px;
+  margin: 0 auto;
+  margin-top: $vr;
+  max-width: 1280px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 48px;
+}
+
 .logotype {
-  font-size: $type-1;
-  margin-left: 8px;
+  font-size: $type1;
+  // margin-left: 8px;
 }
 
 .col1,
@@ -106,6 +183,12 @@ main {
   }
 }
 
+.summary {
+  &+.summary {
+    margin-top: $vr;
+  }
+}
+
 .img {
   &:first-child {
     top: 0;
@@ -131,7 +214,7 @@ main {
 }
 
 .img3 {
-  width: 220px;
+  width: 320px;
 }
 
 .img4 {
@@ -150,8 +233,8 @@ main {
   @include box-shadow(2);
   // position: relative;
   background-clip: border-box;
-  border-right: $type-4 dashed $redRGBA;
-  border: $type-4 dashed $redRGBA;
+  border-right: $type-4 dashed $orange;
+  border: $type-4 dashed $orange;
 }
 
 .img--border-green {
@@ -159,8 +242,8 @@ main {
   @include box-shadow(2);
   // position: relative;
   background-clip: border-box;
-  border-right: $type-4 dashed $greenRGBA;
-  border: $type-4 dashed $greenRGBA;
+  border-right: $type-4 dashed $orange;
+  border: $type-4 dashed $orange;
 }
 
 .rotate1 {
@@ -178,6 +261,10 @@ main {
 .info {
   display: flex;
   align-items: center;
+
+  &:last-child {
+    // margin-bottom: $vr * 2;
+  }
 }
 
 .credits {
