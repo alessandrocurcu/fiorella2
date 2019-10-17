@@ -60,7 +60,25 @@ block main
           picture.img.absolute
             source(srcset="img/webp/tennis.webp", type="image/webp")  
             img.img4.img--border-red.rotate3(src="img/tennis.jpg", alt="kids having fun") 
-    //- svg(class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320")
-    //-   path(fill="#25CED1" fill-opacity="1" d="M0,64L60,80C120,96,240,128,360,160C480,192,600,224,720,202.7C840,181,960,107,1080,64C1200,21,1320,11,1380,5.3L1440,0L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z")
+      form.form#form
+        .form__group
+          label(for="name") Name
+          input#name.form__input(type="name", name="name", tabindex="0", placeholder="Your name", required)
+          p.validation-message.u-show-hide Please insert a name
+        .form__group
+          label(for="email") Email address
+          input#email.form__input(type="email", name="email", maxlength="128", tabindex="0",placeholder="Your email address", required)
+          p.validation-message.u-show-hide Please insert an email
+          p.validation-message.u-show-hide Please insert a valid email
+        .form__group
+          label(for="city") City
+          input#city.form__input(type="city", name="city", maxlength="30", tabindex="0",placeholder="Your city", required)
+          p.validation-message.u-show-hide Please insert a city 
+        .form__group
+          label(for="message") Message
+          textarea#message(name="message", rows="10", placeholder="Your message...", required)
+          p.validation-message.u-show-hide Please insert a message 
+        .form__submit          
+          button#js-submitBtn.btn.btn--void(type="submit") Invia messaggio
 block mainScript
-  //- script(src="js/index.js")
+  script(src="js/index.js")

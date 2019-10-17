@@ -21,6 +21,9 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+@import 'components/form';
+@import 'components/button';
+
 
 main {
   position: relative;
@@ -71,15 +74,25 @@ main {
   // background-color: #222;
   // color: #fff;
 
+
   &__inside {
     margin: 0 auto;
     max-width: 1280px;
-    padding: $vr*2 0 $vr*2 0;
+    padding: $vr*2 12px $vr*2 12px;
+
     // padding-top: 64px;
+    @include xl {
+      padding: $vr*2 0 $vr*2 0;
+    }
   }
 
   .summary {
-    font-size: $type1;
+    font-size: $type0;
+
+
+    @include lg {
+      font-size: $type1;
+    }
   }
 }
 
@@ -117,14 +130,22 @@ main {
   position: relative;
   // top: -$vr*4;
   background-color: rgb(255, 255, 255);
-  padding: 24px 0;
+  padding: 24px 12px;
   border-radius: 0px;
   margin: 0 auto;
   margin-top: $vr;
   max-width: 1280px;
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+
   gap: 48px;
+
+  @include lg {
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  @include xl {
+    padding: 0;
+  }
 }
 
 .logotype {
@@ -137,6 +158,14 @@ main {
 .center {
   display: grid;
   place-items: center;
+}
+
+.col2 {
+  margin-top: $vr*3;
+
+  @include lg {
+    margin-top: 0;
+  }
 }
 
 // .center {
@@ -153,9 +182,13 @@ main {
 }
 
 .title {
-  font-size: $type5;
+  font-size: $type3;
   line-height: 100%;
   margin-bottom: $vr / 2;
+
+  @include lg {
+    font-size: $type5;
+  }
 }
 
 .header {
