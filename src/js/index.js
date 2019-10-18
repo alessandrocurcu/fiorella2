@@ -23,7 +23,7 @@ const axios = require('axios');
 
       ie_button.addEventListener(
         'click',
-        function(e) {
+        (e) => {
           ie_component.classList.add('u-show-hide');
         },
         false
@@ -49,7 +49,7 @@ const axios = require('axios');
 
     const inputs = [name, email, city, message];
 
-    let emailRe = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$');
+    const emailRe = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$');
     let isValid = 0;
 
     inputs.forEach(el => {
@@ -58,7 +58,7 @@ const axios = require('axios');
         el.nextElementSibling.classList.remove('u-show-hide');
         isValid--;
         return false;
-      } else {
+      } 
         el.classList.remove('input--error');
         el.nextElementSibling.classList.add('u-show-hide');
         isValid++;
@@ -77,7 +77,7 @@ const axios = require('axios');
             );
           }
         }
-      }
+      
     });
 
     if (isValid >= 4) {
@@ -88,15 +88,16 @@ const axios = require('axios');
         message: message.value,
       };
 
-      let bodyFormData = new FormData();
+      const bodyFormData = new FormData();
 
-      for (let key in data) {
+      for (const key in data) {
         bodyFormData.append(key, data[key]);
       }
 
       axios
         .post(
-          'http://www.fiorellabonfantisports.it/landing/test_form.php',
+          // 'http://www.fiorellabonfantisports.it/landing/test_form.php',
+          'mailer/form.php',
           bodyFormData,
           {
             config: {
@@ -106,17 +107,18 @@ const axios = require('axios');
             },
           }
         )
-        .then((response) => {
+        .then(response => {
           console.log(response);
-          const form = document.getElementById("form");
-          const confirmationMessage = document.getElementById("confirmation-message");
+          const form = document.getElementById('form');
+          const confirmationMessage = document.getElementById(
+            'confirmation-message'
+          );
           form.innerHTML = '';
-          form.classList.add("u-show-hide");
-          confirmationMessage.classList.remove("u-show-hide");
-
+          form.classList.add('u-show-hide');
+          confirmationMessage.classList.remove('u-show-hide');
         })
-        .catch((error) => {
-          alert("Error: please try again; Errore: ritenta")
+        .catch(error => {
+          alert('Error: please try again; Errore: ritenta');
           console.log(error);
         });
     } else {

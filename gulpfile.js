@@ -1,11 +1,5 @@
 // const gulp = require('gulp');
-const {
-  src,
-  dest,
-  series,
-  parallel,
-  watch
-} = require('gulp');
+const { src, dest, series, parallel, watch } = require('gulp');
 const browserSync = require('browser-sync').create();
 const log = require('fancy-log');
 const color = require('ansi-colors');
@@ -35,7 +29,6 @@ const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 
-
 const browserSyncTask = cb => {
   browserSync.init({
     server: {
@@ -46,21 +39,18 @@ const browserSyncTask = cb => {
   cb();
 };
 
-
-//** HTML TASKS **// 
+//* * HTML TASKS **//
 
 const html = () => {
   log(color.green('Compilo Pug in HTML'));
-  return (
-    src(['./src/views/*.pug', '!./src/views/_?*.pug'])
+  return src(['./src/views/*.pug', '!./src/views/_?*.pug'])
     .pipe(
       pug({
         pretty: true,
       })
     )
     .pipe(dest('./'))
-    .pipe(browserSync.stream())
-  );
+    .pipe(browserSync.stream());
 };
 
 const cleanHTML = cb => {
@@ -71,14 +61,13 @@ const cleanHTML = cb => {
 
 const prodhtml = () => {
   log(color.green('Compilo Pug in HTML'));
-  return (
-    src(['./src/views/*.pug', '!./src/views/_?*.pug'])
+  return src(['./src/views/*.pug', '!./src/views/_?*.pug'])
     .pipe(
       pug({
         pretty: true,
       })
     )
-    .pipe(dest('./dist')));
+    .pipe(dest('./dist'));
 };
 
 const prodcleanHTML = cb => {
@@ -87,22 +76,22 @@ const prodcleanHTML = cb => {
   cb();
 };
 
-//** FINE - HTML TASKS **//
+//* * FINE - HTML TASKS **//
 
-
-//** CSS TASKS **//
+//* * CSS TASKS **//
 
 const CSS = () => {
   log(color.green('Compilo file SCSS in CSS'));
-  return (
-    src('./src/scss/main.scss')
-    .pipe(sass({
-      importer: moduleImporter()
-    }))
+  return src('./src/scss/main.scss')
+    .pipe(
+      sass({
+        importer: moduleImporter(),
+      })
+    )
     .pipe(
       postcss([
         shortcss({
-          skip: '-'
+          skip: '-',
         }),
         cssnext({
           features: {
@@ -121,15 +110,16 @@ const CSS = () => {
     )
     .pipe(
       gulpStylelint({
-        reporters: [{
-          formatter: 'string',
-          console: true
-        }],
+        reporters: [
+          {
+            formatter: 'string',
+            console: true,
+          },
+        ],
       })
     )
     .pipe(dest('./css/'))
-    .pipe(browserSync.stream())
-  );
+    .pipe(browserSync.stream());
 };
 
 const cleanCSS = cb => {
@@ -140,15 +130,16 @@ const cleanCSS = cb => {
 
 const prodCSS = () => {
   log(color.green('Compilo file SCSS in CSS'));
-  return (
-    src('./src/scss/main.scss')
-    .pipe(sass({
-      importer: moduleImporter()
-    }))
+  return src('./src/scss/main.scss')
+    .pipe(
+      sass({
+        importer: moduleImporter(),
+      })
+    )
     .pipe(
       postcss([
         shortcss({
-          skip: '-'
+          skip: '-',
         }),
         cssnext({
           features: {
@@ -166,7 +157,7 @@ const prodCSS = () => {
       })
     )
     .pipe(cssnano())
-    .pipe(dest('./dist/css/')));
+    .pipe(dest('./dist/css/'));
 };
 
 const prodcleanCSS = cb => {
@@ -175,18 +166,19 @@ const prodcleanCSS = cb => {
   cb();
 };
 
-//** FINE - CSS TASKS **//
+//* * FINE - CSS TASKS **//
 
-
-//** JAVASCRIPT TASKS **//  
+//* * JAVASCRIPT TASKS **//
 
 const js = () => {
   log(color.green('Concateno file JS'));
-  return (
-    src('./src/js/index.js')
-    .pipe(webpackStream(webpackConfig), webpack)
+  return src('./src/js/index.js')
+    .pipe(
+      webpackStream(webpackConfig),
+      webpack
+    )
     .pipe(dest('./js/'))
-    .pipe(browserSync.stream()));
+    .pipe(browserSync.stream());
 };
 
 const cleanJS = cb => {
@@ -197,10 +189,12 @@ const cleanJS = cb => {
 
 const prodjs = () => {
   log(color.green('Concateno file JS'));
-  return (
-    src('./src/js/index.js')
-    .pipe(webpackStream(webpackConfig), webpack)
-    .pipe(dest('./dist/js/')));
+  return src('./src/js/index.js')
+    .pipe(
+      webpackStream(webpackConfig),
+      webpack
+    )
+    .pipe(dest('./dist/js/'));
 };
 
 const prodcleanJS = cb => {
@@ -209,31 +203,38 @@ const prodcleanJS = cb => {
   cb();
 };
 
-//** FINE - JAVASCRIPT TASKS **//
+//* * FINE - JAVASCRIPT TASKS **//
 
+//* * IMAGES TASKS **//
 
-//** IMAGES TASKS **// 
-
-const optimizeImage = () => src('./src/img-not/*.*').pipe(imagemin()).pipe(image({
-  optipng: ['-i 1', '-strip all', '-fix', '-o7', '-force'],
-  pngquant: ['--speed=1', '--force', 256],
-  zopflipng: ['-y', '--lossy_8bit', '--lossy_transparent'],
-  jpegRecompress: ['--strip'],
-  mozjpeg: ['-optimize', '-progressive'],
-  guetzli: ['--quality', 85],
-  gifsicle: ['--optimize'],
-  svgo: ['--enable', 'cleanupIDs', '--disable', 'convertColors']
-})).pipe(dest('./src/img/'));
+const optimizeImage = () =>
+  src('./src/img-not/*.*')
+    .pipe(imagemin())
+    .pipe(
+      image({
+        optipng: ['-i 1', '-strip all', '-fix', '-o7', '-force'],
+        pngquant: ['--speed=1', '--force', 256],
+        zopflipng: ['-y', '--lossy_8bit', '--lossy_transparent'],
+        jpegRecompress: ['--strip'],
+        mozjpeg: ['-optimize', '-progressive'],
+        guetzli: ['--quality', 85],
+        gifsicle: ['--optimize'],
+        svgo: ['--enable', 'cleanupIDs', '--disable', 'convertColors'],
+      })
+    )
+    .pipe(dest('./src/img/'));
 
 const devimg = () => {
   log(color.green('Creo immagini'));
-  return (src('./src/img-not/*.*').pipe(dest('./img')));
+  return src('./src/img-not/*.*').pipe(dest('./img'));
 };
 
 const devimgwebp = () => {
   log(color.green('Creo immagini webp'));
-  return (src('./src/img-not/*.{jpg,png}').pipe(webp()).pipe(dest('./img/webp')));
-}
+  return src('./src/img-not/*.{jpg,png}')
+    .pipe(webp())
+    .pipe(dest('./img/webp'));
+};
 
 const cleanIMG = cb => {
   log(color.green('Pulisco immagini'));
@@ -243,12 +244,14 @@ const cleanIMG = cb => {
 
 const prodimg = () => {
   log(color.green('Creo immagini'));
-  return (src('./src/img/*.*').pipe(dest('./dist/img')));
+  return src('./src/img/*.*').pipe(dest('./dist/img'));
 };
 
 const prodimgwebp = () => {
   log(color.green('Creo immagini webp'));
-  return (src('./src/img/*.{jpg,png}').pipe(webp()).pipe(dest('./dist/img/webp')));
+  return src('./src/img/*.{jpg,png}')
+    .pipe(webp())
+    .pipe(dest('./dist/img/webp'));
 };
 
 const prodcleanimg = cb => {
@@ -257,10 +260,11 @@ const prodcleanimg = cb => {
   cb();
 };
 
-//** FINE - IMAGES TASKS **// 
+//* * FINE - IMAGES TASKS **//
 
+const mailform = cb => src('./mailer/*.*').pipe(dest('./dist/mailer'));
 
-//** ELENCO TASK **//
+//* * ELENCO TASK **//
 
 const watchFiles = () => {
   watch('./src/scss/**/*.scss', series(cleanCSS, CSS));
@@ -271,14 +275,19 @@ const watchFiles = () => {
 
 exports.img = optimizeImage;
 
-// Lancia questo durante il development // 
+// Lancia questo durante il development //
 
-exports.dev = series(series(cleanCSS, cleanHTML, cleanJS, cleanIMG), series(html, CSS, js, devimg, devimgwebp), parallel(watchFiles, browserSyncTask));
+exports.dev = series(
+  series(cleanCSS, cleanHTML, cleanJS, cleanIMG),
+  series(html, CSS, js, devimg, devimgwebp),
+  parallel(watchFiles, browserSyncTask)
+);
 
 // Lancia questo per la build //
 exports.build = parallel(
   series(prodcleanHTML, prodhtml),
   series(prodcleanCSS, prodCSS),
   series(prodcleanJS, prodjs),
-  series(prodcleanimg, prodimg, prodimgwebp)
+  series(prodcleanimg, prodimg, prodimgwebp),
+  mailform
 );
